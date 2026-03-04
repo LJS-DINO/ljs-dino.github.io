@@ -3,40 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dino Games Game Room</title>
+    <title>Dino Games - Premium Web Gaming</title>
     <style>
-        body { font-family: sans-serif; text-align: center; background-color: #f9f9f9; padding: 50px; }
-        .logo { width: 200px; border-radius: 20px; margin-bottom: 20px; }
-        h1 { color: #333; }
-        .game-list { display: flex; justify-content: center; gap: 20px; margin-top: 30px; }
-        .game-card { 
-            background: white; padding: 20px; border-radius: 15px; 
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-decoration: none; color: #333;
-            transition: transform 0.2s;
+        /* 기본 스타일 */
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #f4f7f6; color: #333; line-height: 1.6; }
+        
+        /* 네비게이션 메뉴 */
+        nav { background: #2c3e50; color: white; padding: 15px 0; text-align: center; sticky: top; }
+        nav a { color: white; text-decoration: none; margin: 0 20px; font-weight: bold; font-size: 0.9rem; }
+        nav a:hover { color: #2ecc71; }
+
+        /* 헤더 섹션 */
+        header { text-align: center; padding: 60px 20px; background: white; }
+        .logo { width: 150px; border-radius: 50%; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        h1 { margin: 10px 0; color: #2c3e50; font-size: 2.5rem; }
+        .subtitle { color: #7f8c8d; font-size: 1.1rem; }
+
+        /* 게임 리스트 (추가하기 쉬운 구조) */
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+        .section-title { border-left: 5px solid #2ecc71; padding-left: 15px; margin-bottom: 30px; font-size: 1.5rem; }
+        
+        .game-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+            gap: 25px; 
         }
-        .game-card:hover { transform: translateY(-5px); }
-        .game-card h3 { margin: 0; }
+
+        /* 게임 카드 스타일 */
+        .game-card { 
+            background: white; border-radius: 12px; overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05); text-decoration: none; color: inherit;
+            transition: all 0.3s ease; display: block; border: 1px solid #eee;
+        }
+        .game-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+        .game-card-img { width: 100%; height: 160px; background: #ecf0f1; display: flex; align-items: center; justify-content: center; font-size: 3rem; }
+        .game-card-info { padding: 20px; }
+        .game-card-info h3 { margin: 0 0 10px 0; color: #2c3e50; }
+        .game-card-info p { margin: 0; color: #7f8c8d; font-size: 0.9rem; }
+
+        /* 푸터 섹션 (필수 정보) */
+        footer { background: #2c3e50; color: #bdc3c7; padding: 40px 20px; text-align: center; margin-top: 60px; }
+        .footer-links { margin-bottom: 20px; }
+        .footer-links a { color: #bdc3c7; text-decoration: none; margin: 0 10px; font-size: 0.85rem; }
+        .footer-links a:hover { color: white; }
+        .copyright { font-size: 0.8rem; }
     </style>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6521246280466672"
-     crossorigin="anonymous"></script>
 </head>
 <body>
-    <img src="logo.png" alt="Dino Games Logo" class="logo">
-    <h1>Dino Games Game Room</h1>
-    <p>디노 게임 오락실에 오신 것을 환영합니다!</p>
 
-<div class="game-list">
-    <a href="https://ljs-dino.github.io/web_black-jack/blackjack.html" class="game-card">
-        <h3>🃏 21 카드 배틀(21 Card Battle)</h3>
-        <p>지금 바로 플레이하세요!</p>
-    </a>
-</div>
-  
-<div class="game-list">
-    <a href="https://ljs-dino.github.io/24/24.html" class="game-card">
-        <h3>🃏 24 만들기(Make 24)</h3>
-        <p>지금 바로 플레이하세요!</p>
-    </a>
-</div>
-    
+    <nav>
+        <a href="#home">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="products.html">Products</a>
+        <a href="cs.html">Customer Service</a>
+        <a href="policy.html">Policy</a>
+    </nav>
+
+    <header id="home">
+        <img src="logo.png" alt="Dino Games Logo" class="logo">
+        <h1>DINO GAMES</h1>
+        <p class="subtitle">Enjoy high-quality web games anywhere, anytime.</p>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">Latest Games</h2>
+        
+        <div class="game-grid">
+            
+            <a href="https://ljs-dino.github.io/web_black-jack/blackjack.html" class="game-card">
+                <div class="game-card-img">🃏</div>
+                <div class="game-card-info">
+                    <h3>21 Card Battle</h3>
+                    <p>전략과 운의 대결! 21 카드 배틀 게임을 즐겨보세요.</p>
+                </div>
+            </a>
+
+<a href="https://ljs-dino.github.io/24/24.html" class="game-card">
+    <div class="game-card-img">🎮</div> <div class="game-card-info">
+        <h3>Make 24</h3>
+        <p>사칙연산을 활용한 암산 대결! 숫자 4개로 24를 만들어보세요!</p>
+    </div>
+</a>
+
+            <a href="#" class="game-card">
+                <div class="game-card-img">🦖</div>
+                <div class="game-card-info">
+                    <h3>Coming Soon</h3>
+                    <p>새로운 흥미진진한 게임이 곧 출시될 예정입니다.</p>
+                </div>
+            </a>
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="about.html">About Us</a> | 
+            <a href="products.html">Products</a> | 
+            <a href="cs.html">Customer Service</a> | 
+            <a href="policy.html">Privacy Policy</a>
+        </div>
+        <p class="copyright">&copy; 2026 DINO GAMES. All rights reserved.</p>
+    </footer>
+
+</body>
 </html>

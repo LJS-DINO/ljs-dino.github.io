@@ -54,7 +54,7 @@
 
     <nav>
         <a onclick="showSection('home')" class="nav-logo">
-            <img src="logo.png" style="width:35px; border-radius:50%;"> DINO GAMES
+            <img src="logo.png" style="width:35px; border-radius:50%;" onerror="this.style.display='none'"> DINO GAMES
         </a>
         <div class="nav-links">
             <a onclick="showSection('home')">Home</a>
@@ -71,7 +71,7 @@
     <main>
         <section id="home" class="active">
             <header>
-                <img src="logo.png" alt="Dino Games Logo" class="logo">
+                <img src="logo.png" alt="Dino Games Logo" class="logo" onerror="this.style.display='none'">
                 <h1>DINO GAMES</h1>
                 <p>Enjoy high-quality web games anywhere, anytime.</p>
             </header>
@@ -152,9 +152,10 @@
         <p>&copy; 2026 DINO GAMES. All rights reserved.</p>
     </footer>
 
+    <!-- Firebase 버전을 게임(11.6.1)과 동일하게 업데이트 -->
     <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-        import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
 
         const firebaseConfig = {
             apiKey: "AIzaSyCCELb4mV6fQaotFsQtjXp2AxMiiF5dvOI",
@@ -167,7 +168,7 @@
         };
 
         const app = initializeApp(firebaseConfig);
-        const auth = getAuth();
+        const auth = getAuth(app);
         const provider = new GoogleAuthProvider();
 
         window.googleLogin = () => {
